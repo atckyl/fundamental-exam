@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer src="soal-3.js"></script>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+        form {
+            width: 45%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <form >
+        <fieldset>
+            <legend>Filter</legend>
+            <p>Nama: <input type="text" id="search" oninput="filterName()"></p>
+            <p>Umur: <input type="number" name="num1" id="num1" onkeyup="filterAge()"> -
+                    <input type="number" name="num2" id="num2" onkeyup="filterAge()">
+            </p>
+
+            <p>Pekerjaan: <select name="job" id="job">
+                </select>
+            </p>
+
+            <p><input type="button" value="Search Job" onclick="filterJob()"></p>
+
+            <p><input type="radio" name="sex" value="Pria" checked>Pria
+            <input type="radio" name="sex" value="Wanita">Wanita</p>
+
+            <p><input type="button" value="Filter Gender" onclick="filterGender()"></p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Sorting</legend>
+            <input type="button" value="Sort Nama" onclick="sortBy(compareName)">
+            <input type="button" value="Sort Umur" onclick="sortBy(compareAge)">
+            <input type="button" value="Sort Kelamin" onclick="sortBy(compareSex)">
+            <input type="button" value="Sort Pekerjaan" onclick="sortBy(compareJob)">
+        </fieldset>
+        
+        <fieldset>
+            <legend>Input Data</legend>
+            <table>
+                <td><input type="text" name="nama" id="nama"></td>
+                <td><input type="number" name="nama" id="umur"></td>
+                <td><input type="text" name="nama" id="jobs"></td>
+                <td><input type="radio" name="sexInput" value="Pria" checked>Pria</td>
+                <td><input type="radio" name="sexInput" value="Wanita">Wanita</td>
+            </table>
+            <p><input type="button" value="Submit" onclick="pushUser()"></p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Tabel Data</legend>
+            <table id="myTable">
+                <thead>
+                    <th>Nama</th>
+                    <th>Umur</th>
+                    <th>Kelamin</th>
+                    <th>Pekerjaan</th>
+                </thead>
+                <tbody id="here">
+                    
+                </tbody>
+            </table>
+        </fieldset>
+    </form>
+</body>
+
+</html>
